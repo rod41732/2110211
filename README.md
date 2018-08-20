@@ -3,6 +3,24 @@ intro data struct chula engineer 2110211 (C++)
 
 site: https://nattee.net/grader
 
+## extras
+ - if you are too lazy to type std:: before each STL write this line.  
+ write this after `#include` statements
+  ```cpp
+    using namespace std;
+  ```
+ - make `std::cin` and `std::cout` faster for code with large input like 50000+ lines. no need to change everywhere else
+ ```cpp
+  int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    // your codes go below here 
+
+  
+}
+ ```
+
+
 ## std::vector
 ```cpp
 #include <vector>
@@ -29,7 +47,6 @@ for (; it != vec.end(); ++it) {
 for (uint i = 0; i != vec.size(); ++i) {
   int val = vec[i];
 }
-
 ```
 
 ## std::pair
@@ -87,11 +104,14 @@ mp['b'] = 1;   // mp = {{'a': 7}, {'b': 1}, {'c': 999}}
 ## std::map::iterator
 ```cpp
 for (auto it = mp.begin(); it != mp.end(); ++it){
+  // since "it" is a iterator, need to dereference before using it 
   auto key = it->first;
   auto val = it->second;
 }
 for (auto pii : mp){
+  // pii is pair of (key, value)
   auto key = pii.first;
   auto val = pii.second;
 }
 ```
+
